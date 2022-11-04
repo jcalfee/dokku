@@ -587,3 +587,9 @@ install_pack() {
     apt-get --yes install pack-cli
   fi
 }
+
+install_nixpacks() {
+  if ! command -v "nixpacks" &>/dev/null; then
+    curl -sSL https://nixpacks.com/install.sh | FORCE=1 bash
+  fi
+}
