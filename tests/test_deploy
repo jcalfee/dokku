@@ -12,7 +12,7 @@ REPO="test-$(basename "$APP")-$RANDOM"
 
 destroy_app() {
   # shellcheck disable=SC2029
-  echo "$REPO" | ssh "$REMOTE" apps:destroy "$REPO"
+  ssh "$REMOTE" apps:destroy "$REPO" --force
 }
 
 failed() {
