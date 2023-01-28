@@ -58,8 +58,9 @@ if [[ "$SHOULD_FAIL" == true ]]; then
   exit 0
 fi
 
-dokku apps:list
-URL=$(dokku url "$REPO")$FORWARDED_PORT
+ssh "$REMOTE" apps:list
+# shellcheck disable=SC2029
+URL=$(ssh "$REMOTE" url "$REPO")$FORWARDED_PORT
 sleep 2
 if (./check_deploy "$URL"); then
   echo "-----> Deploy success!"
