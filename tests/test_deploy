@@ -58,6 +58,7 @@ if [[ "$SHOULD_FAIL" == true ]]; then
   exit 0
 fi
 
+dokku apps:list
 URL=$(dokku url "$REPO")$FORWARDED_PORT
 sleep 2
 if (./check_deploy "$URL"); then
