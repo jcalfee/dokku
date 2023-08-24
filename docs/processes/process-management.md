@@ -32,7 +32,7 @@ This command will gather all the running container IDs for your app and call `do
 
 ### Rebuilding apps
 
-It may be useful to rebuild an app at will, such as for commands that do not rebuild an app or when skipping a rebuild after setting multiple config values. For these use cases, the `ps:rebuild` function can be used.
+It may be useful to rebuild an app at will, such as for commands that do not rebuild an app, after using `--skip-deploy`, or when skipping a rebuild after setting multiple config values. For these use cases, the `ps:rebuild` function can be used.
 
 ```shell
 dokku ps:rebuild node-js-app
